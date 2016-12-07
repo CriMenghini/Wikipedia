@@ -1,9 +1,16 @@
 ## Get in touch with Wikipedia 
 
-The task of this little work is to:
+The goal of this little work is to:
 
-* Find all articles in Italian and Portuguese that mention Matteo Renzi;
+* Find all articles in Italian and Portuguese that mention Matteo Renzi
+
+The code to accomplish this task is stored in the `.py` files mentioned below:
+
+1. `wiki_parser.py`: contains the class used to parse wikimedia `xml`
+2. `helpers_parser.py`: gathers functions applied during the parse. 
+
 * Rank them by how frequently they were viewed in November.
+
 
 Then to play a bit with data:
 
