@@ -4,6 +4,8 @@ The goal of this little work is to:
 
 * Find all articles in Italian and Portuguese that mention Matteo Renzi
 
+![](matteo_renzi.png?raw=true)
+
 The code to accomplish this task is stored in the `.py` files mentioned below:
 
 1. `wiki_parser.py`: contains the class used to parse wikimedia `xml`

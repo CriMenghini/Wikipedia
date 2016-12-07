@@ -13,15 +13,11 @@ Created on Wed Dec  7 11:52:04 2016
 import xml.sax
 from helpers_parser import *
 
-# Define global variables
-list_prova = []
-language = 'italian'
-
 # Define the class to parse wikimedia xlm
 
 class WikiHandler(xml.sax.ContentHandler):
     
-    def __init__(self):
+    def __init__(self, language):
         """An instance created by that class is characterized by the following 
         attributes:
         
@@ -33,6 +29,8 @@ class WikiHandler(xml.sax.ContentHandler):
         self.CurrentData = ""
         self.title = ""
         self.text = ""
+        self.language = language
+        self._charBuffer = []
     
     
     def startElement(self, tag, attributes):
@@ -53,20 +51,16 @@ class WikiHandler(xml.sax.ContentHandler):
         
         @tag: name of the element"""
         
-        # Define the global variables used to store the data
-        global list_prova
-        global language
-        
         # Define the text of the article and the presence of matches
-        mod_text, match = find_match(list_prova, 'Matteo Renzi')
+        mod_text, match = find_match(self._charBuffer, 'Matteo Renzi')
         
         # Whether there is a match the article is stored
         if match != None:
             #print ('MATCH RENZI')
-            load_json(self.title, mod_text, language)
+            load_json(self.title, mod_text, self.language)
         
-        # Re-initialize the list that contains the article's elements 
-        list_prova = []
+        # Re-initialize the buffer that contains the article's elements 
+        self._charBuffer = []
         # Re-initialize two entity attributes
         self.CurrentData = ""
         self.text = ""
@@ -84,10 +78,17 @@ class WikiHandler(xml.sax.ContentHandler):
         
         # Whether the inspected tag is 'text'
         elif self.CurrentData == "text":  
-            
-            # Recall the global variable
-            global list_prova
-            
-            # Append content to it
-            list_prova += [content]
+
+            self._charBuffer.append(content)             
                           
+                          
+def parse_articles(language, xml_):
+    """ This function executes the parse of the articles."""
+    
+    #if ( __name__ == "__main__"):
+    # create an XMLReader
+    parser = xml.sax.make_parser()
+    # override the default ContextHandler
+    Handler = WikiHandler(language)
+    parser.setContentHandler(Handler)
+    parser.parse(xml_)

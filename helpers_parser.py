@@ -44,6 +44,6 @@ def load_json(title, text_to_load, language):
     @text_to_load: text of the article
     @language: language of the article"""
     
-    with open('/Data/wiki_' + language + '_matteo_renzi.json', "a+") as json_file:
+    with open('Corpus/wiki_' + language + '_matteo_renzi.json', "a+") as json_file:
         # Each element of the json is stored in line 
         json_file.write("{}\n".format(json.dumps({'title': title, 'text': text_to_load})))
