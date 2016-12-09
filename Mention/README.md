@@ -14,12 +14,13 @@ For analysis that want to take into account other factors, like the pageviews of
 
 ## Script descriptions
 
-1. __`wiki_parser.py`__: This script provides the code to parse the [downloaded data](#data). A detailed documentation is furnished for each function.
+1. __`wiki_parser.py`__: This script provides the code to parse the [downloaded data](#data). A detailed documentation is furnished for each function. It gives as output:
+	- The `.json` files contained in `Corpus` directory - related to the [example](#example). 
 2. __`helpers_parser.py`__: It gathers some support functions for the parsing of the `xml` files.
 3. __`pageviews.py`__: Defines fuctions used to carry out analysis related to the pageviews of the articles of interest.
 
 
-## `IPython Notebook` example - Matteo Renzi mentions
+## `IPython Notebook` example - Matteo Renzi mentions across Italian and Portuguese Wikipedia <a name ="example"></a>
 
 The goal of the `Notebook` is to provide an example that shows how to use the implemented code and to carry out a small analysis having as object of interest 'Matteo Renzi'. We proceed with the following steps:
 
