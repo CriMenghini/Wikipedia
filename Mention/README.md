@@ -12,7 +12,7 @@ The data in usage are available on [Wikimedia Downloads](https://dumps.wikimedia
 
 For analysis that want to take into account other factors, like the pageviews of the articles, through this [link](https://dumps.wikimedia.org/other/pagecounts-ez/merged/) it is possible to get the pageviews for the whole *Wikipedia* corpus for each month since 2011. The documentation related to this data is provided [here](https://dumps.wikimedia.org/other/pagecounts-raw/).
 
-## Script's descriptions
+## Script descriptions
 
 
 
