@@ -4,7 +4,7 @@ The proposed scripts allow you to study the mentions of a certain *word* across 
 
 ## Get data to analyse
 
-### Built the corpus
+### Download sets of articles <a name ="data"></a>
 
 The data in usage are available on [Wikimedia Downloads](https://dumps.wikimedia.org/backup-index.html) page. Once you are on the Web Site you can choose the language and the date (data referring to *Wikipedia* data until that date)you are interested in to carry out the analysis (i.e. suppose you want to have all the Italian articles you follow the link [`itwiki`](https://dumps.wikimedia.org/ltwiki/20161201/) - referring to a certain date-  and then you proceed downloading the dump `ltwiki-DATE-pages-articles-multistream.xml.bz2 `, where `DATE` will be the date that corresponds to your interest. The dump contains articles, templates, media/file descriptions, and primary meta-pages). This data will be the *corpus* for your analysis.
 
@@ -14,22 +14,20 @@ For analysis that want to take into account other factors, like the pageviews of
 
 ## Script descriptions
 
+1. __`wiki_parser.py`__: This script provides the code to parse the [downloaded data](#data). A detailed documentation is furnished for each function.
+2. __`helpers_parser.py`__: It gathers some support functions for the parsing of the `xml` files.
+3. __`pageviews.py`__: Defines fuctions used to carry out analysis related to the pageviews of the articles of interest.
 
 
-## IPython Notebook example
-The goal of this little work is to:
+## `IPython Notebook` example - Matteo Renzi mentions
 
-* Find all articles in Italian and Portuguese that mention Matteo Renzi
+The goal of the `Notebook` is to provide an example that shows how to use the implemented code and to carry out a small analysis having as object of interest 'Matteo Renzi'. We proceed with the following steps:
+
+1. Find all articles in Italian and Portuguese that mention Matteo Renzi.
+
+2. Rank them by how frequently they were viewed in November.
 
 ![](matteo_renzi.png?raw=true)
-
-The code to accomplish this task is stored in the `.py` files mentioned below:
-
-1. `wiki_parser.py`: contains the class used to parse wikimedia `xml`
-2. `helpers_parser.py`: gathers functions applied during the parse. 
-
-* Rank them by how frequently they were viewed in November.
-
 
 Then to play a bit with data:
 
