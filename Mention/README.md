@@ -1,3 +1,4 @@
+# Analize how much and how a *word* or a *regular expression* is mentioned in Wikipedia pages across languages
 ## Get in touch with Wikipedia 
 
 The goal of this little work is to:
