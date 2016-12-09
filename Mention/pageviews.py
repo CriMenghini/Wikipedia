@@ -37,7 +37,7 @@ def article_df_from_json(json_):
     
 
 def get_pageviews(lang_dict, title_split, split_line):
-    """ This function add elements to the dictionary (key, value): (title, pageviews) 
+    """ This function adds elements to the dictionary (key, value): (title, pageviews) 
     and returns the dictionary. 
     It takes as inputs:
     
@@ -58,7 +58,7 @@ def get_pageviews(lang_dict, title_split, split_line):
     
 
 def filter_pageviews_file(file_name, language_list):
-    """ This function return the dictionary (key,(key,value)):('Initials language',('Title','No. pageviews')). 
+    """ This function returns the dictionary (key,(key,value)):('Initials language',('Title','No. pageviews')). 
     It is obtained filtering by the language of the article.
     It takes as inputs:
     
