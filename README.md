@@ -1,19 +1,20 @@
-## Get in touch with Wikipedia 
+# Wikipedia analysis
 
-The goal of this little work is to:
+## Introduction
+The purpose of this repository is to gather `python` scripts that allowed to make analysis on *Wikipedia*'s available data.
 
-* Find all articles in Italian and Portuguese that mention Matteo Renzi
+It is organised in directories each of those contains procedures related to a specific task analysis.
 
-![](matteo_renzi.png?raw=true)
+Here follows a little description for each of the aforementioned directories.
 
-The code to accomplish this task is stored in the `.py` files mentioned below:
+## Directories
+1. `Mention`: Once you choose a *word* or a *regular expression* you are interested in, the provided scripts allowed you to carry out some analysis relate to the mentions of the choosen words. A more detailed explanation is furnished in the [`README.md`](Mentions/README.md) of the directory.
 
-1. `wiki_parser.py`: contains the class used to parse wikimedia `xml`
-2. `helpers_parser.py`: gathers functions applied during the parse. 
+### Directories organization
 
-* Rank them by how frequently they were viewed in November.
+Each directory provides the following files:
 
+1. `README.md` file: description of the work;
+2. `.py` scripts which rally the classes and methods implemented to accomplish the task;
+3. A `IPythonNotebook` that shows way to use the classes and methods provided.
 
-Then to play a bit with data:
-
-* Explore the differences between IT and PT in terms of numbers and plots. Are there distinct differences between the languages in terms of what kinds of articles mention Renzi? What's the distribution of number of Renzi mentions per article in IT vs. PT? 
