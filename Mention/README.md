@@ -1,6 +1,11 @@
 # Analize how much and how a *word* or a *regular expression* is mentioned in Wikipedia pages across languages
-## Get in touch with Wikipedia 
 
+The proposed scripts allow you to study the mentions of a certain *word* across languages using *Wikipedia* articles.
+
+## How to use the code
+
+
+## IPython Notebook
 The goal of this little work is to:
 
 * Find all articles in Italian and Portuguese that mention Matteo Renzi

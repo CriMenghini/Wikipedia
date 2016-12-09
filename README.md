@@ -12,5 +12,5 @@ Each directory provides the following files:
 
 1. `README.md` file: description of the work;
 2. `.py` scripts which rally the classes and methods implemented to accomplish the task;
-3. A `IPythonNotebook` that shows way to use the classes and methods provided.
+3. A `IPython Notebook` that shows way to use the classes and methods provided.
 
