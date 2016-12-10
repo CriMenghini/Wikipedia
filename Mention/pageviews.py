@@ -47,7 +47,8 @@ def get_pageviews(lang_dict, title_split, split_line):
     
     # Check whether the split by ':' produces more than one element
     if len(title_split) == 2:
-        # Add the article and the respective pageviews to the dictionary
+        # Add the article and the respective pageviews to the dictionary. The '_' are replaced 
+        # with the white spaces in order to make the titles uniform with those in the corpus
         lang_dict[title_split[1].replace('_', ' ')] = int(split_line[2])
     
     elif len(title_split) == 1:
@@ -115,7 +116,7 @@ def define_ranked_df(dict_art, lang, mention_title):
     # Get the df with all the visited articles of the month
     visited_article = interested_art[interested_art['Pageviews'].notnull()]
     
-    print ('Over the whole number of articles in the corpus ', len(interested_art)-len(visited_article), ' have not been visited during the considered perion.')
+    print ('Over the whole number of articles in the corpus ', len(interested_art)-len(visited_article), ' have not been visited during the considered period.')
     
     # Sort the df by the pageviews
     ranked_articles = visited_article.sort_values('Pageviews', ascending = False)
