@@ -25,7 +25,7 @@ def find_match(list_prova, string):
     # Join the elements of @list_prova in a unique string
     text = ' '.join(list_prova)
         
-    # Replece '\n' with whitespace
+    # Replace '\n' with whitespace
     mod_text = text.replace('\n', ' ')
         
     # Look up for matches with 'Matteo Renzi' performing a case-insensitive
@@ -48,6 +48,11 @@ def load_json(title, text_to_load, language, topic):
     
     # Re-define the topic
     topic = topic.replace(' ','_')    
+    
+    
+    # Remark: here the .json file is open for each article, whether the number of
+    # access to the file is big, it can be slow. Thus would be better to open the 
+    # the file once and then close it at the end of the operations.
     
     with open('Corpus/wiki_' + language + '_' + topic + '.json', "a+") as json_file:
         # Each element of the json is stored in line 
