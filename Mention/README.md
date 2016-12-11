@@ -26,6 +26,7 @@ For analysis that want to take into account other factors, like the pageviews of
 
 ## `IPython Notebook` example - Matteo Renzi mentions across Italian and Portuguese Wikipedia <a name ="example"></a>
 
+__*Remark:*__ Since interactive plots are present open [this](http://nbviewer.jupyter.org/github/CriMenghini/Wikipedia/blob/master/Mention/Mention_draft.ipynb) link to read the `Notebook` correctly.
 The goal of the `Notebook` is to provide an example that shows how to use the implemented code and to carry out a small analysis having as object of interest 'Matteo Renzi'. We proceed with the following steps:
 
 1. Find all articles in Italian and Portuguese that mention Matteo Renzi.
