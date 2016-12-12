@@ -55,14 +55,15 @@ def article_mentions(json_, string):
     
 ###############################################################################
 
-def get_matches(df_titles):
+def get_matches(df_titles, lang_2):
     """ This function returns a dictionary (key, value):("title_lang_1", 
     "title_lang_2") that matches the article in one language with those of the
     other.
     It takes as input:
     
     @df_titles: is the df of titles of the language with less articles mentioning
-                the string."""
+                the string
+    @lang_2: is the language for which we want to find the titles"""
     
     # Initialize the output dictionary
     dictionary = {}
@@ -79,7 +80,7 @@ def get_matches(df_titles):
         soup = BeautifulSoup(html, 'html.parser')
         
         # Find in the HTML source the title of the equivalent IT article
-        title_dirty = soup.findAll("a", { "lang" : "it" })
+        title_dirty = soup.findAll("a", { "lang" : lang_2 })
         
         # Whethethe the find gives back an empty list it means that the equivalent
         # doesn't exist.        
