@@ -13,14 +13,14 @@ This script contains function used to make analysis on data.
 import re
 import json
 import codecs
-import pandas as pd
-import numpy as np
 import requests
+import numpy as np
+import pandas as pd
 from bs4 import BeautifulSoup
 
 
 def article_mentions(json_, string):
-    """ This funtion returns the data frame of articles and the number of times they mention Matteo Renzi.
+    """ This funtion returns the data frame of articles and the number of times they mention the @string.
     It takes as input:
     
     @json_: is the path of the .json to import
@@ -55,14 +55,40 @@ def article_mentions(json_, string):
     
 ###############################################################################
 
-dict_italian = {}
-for i in df_pt_titles['Title']:
-    #print (i)
-    title = i.replace(' ','_')
-    req = requests.get('https://pt.wikipedia.org/wiki/' + title)
-    html = req.content
-    soup = BeautifulSoup(html, 'html.parser')
-    title_dirty = soup.findAll("a", { "lang" : "it" })
-    if len(title_dirty) != 0:
-        ita_title = title_dirty[0]['title'].split('—')[0].strip()
-        dict_italian[i] = ita_title
+def get_matches(df_titles):
+    """ This function returns a dictionary (key, value):("title_lang_1", 
+    "title_lang_2") that matches the article in one language with those of the
+    other.
+    It takes as input:
+    
+    @df_titles: is the df of titles of the language with less articles mentioning
+                the string."""
+    
+    # Initialize the output dictionary
+    dictionary = {}
+    
+    # For each title of language_1
+    for i in df_titles['Title']:
+        
+        # Preprocess the title in order to make the request
+        title = i.replace(' ','_')
+        
+        # Send the request
+        req = requests.get('https://pt.wikipedia.org/wiki/' + title)
+        html = req.content
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        # Find in the HTML source the title of the equivalent IT article
+        title_dirty = soup.findAll("a", { "lang" : "it" })
+        
+        # Whethethe the find gives back an empty list it means that the equivalent
+        # doesn't exist.        
+        if len(title_dirty) != 0:
+            # Reprocess the title
+            lang_2_title = title_dirty[0]['title'].split('—')[0].strip()
+            
+            # Add the title to the dictionary
+            dictionary[i] = lang_2_title
+        
+    
+    return dictionary
