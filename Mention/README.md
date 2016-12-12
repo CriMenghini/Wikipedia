@@ -23,6 +23,14 @@ For an analysis that wants to take into account other factors, like the page vie
 
 3. __`pageviews.py`__: 
 	> Defines functions used to carry out analysis related to the page views of the articles of interest.
+	
+4. __`across_languages.py`__: 
+
+> Contains functions to make comparisons across languages.
+
+5. __`plots.py`__:
+
+> Gathers functions to draw plots.
 
 
 ## `IPython Notebook` example - Matteo Renzi mentions across Italian and Portuguese Wikipedia <a name ="example"></a>
